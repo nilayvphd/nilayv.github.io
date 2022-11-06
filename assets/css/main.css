@@ -3201,7 +3201,7 @@ input, select, textarea {
 	}
 
 		.wrapper.style2 {
-			background: #e44c65;
+			background: #12a0d0;
 		}
 
 			.wrapper.style2 input[type="text"]:focus,
@@ -3402,7 +3402,7 @@ input, select, textarea {
 			position: absolute;
 			top: 0;
 		}
-
+		
 		#header nav {
 			position: absolute;
 			right: 1em;
