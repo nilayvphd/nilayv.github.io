@@ -3981,9 +3981,9 @@ input, select, textarea {
 					border: 0;
 					border-top: solid 1px rgba(255, 255, 255, 0.05);
 					color: rgba(255, 255, 255, 0.75);
-					display: block;
-					height: 6em;
-					line-height: 6em;
+					display: flex;
+					height: inherit;
+					line-height: 3em;
 					text-decoration: none;
 				}
 
