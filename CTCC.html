@@ -87,9 +87,9 @@
 												</figcaption>
 											</figure>
 											<br>
-											<p style="color:black"> During tumor growth, single circulating tumor cells (CTCs) and aggregates of circulating tumor cells called circulating tumor cell clusters (CTCCs) will be shed into the bloodstream (Figure 2)<sup>3</sup>. 
+											<p style="color:black"> During tumor growth, single circulating tumor cells (CTCs) and aggregates of circulating tumor cells called circulating tumor cell clusters (CTCCs) will be shed into the bloodstream (Figure 2)<sup>4</sup>. 
 												These CTCs and CTCCs can escape into distant organs, forming a metastatic tumor. As the healthy cells compete with metastatic tumor cells for nutrients, the function of essential organs and systems can be impacted, leading to death. 
-												Examining the five-year survival rates for patients with the three most common types of cancers in the US, metastatic growth signifcantly reduces a patients long-term survival (Figure 3)<sup>4</sup>.
+												Examining the five-year survival rates for patients with the three most common types of cancers in the US, metastatic growth signifcantly reduces a patients long-term survival (Figure 3)<sup>3</sup>.
 												To learn more about metastasis click below.
 											</p>
 											<footer>
@@ -112,13 +112,23 @@
 											</a>
 											<figcaption style="color:black">
 												Figure 1: (a) A microfluidic channel with whole blood flowing through it. (b) Schematic of the back-scatter flow cytometer (BSFC). D:dichroic, L:lens, M:mirror, BP:bandpass filter, BS:beam splitter, PMT:photomultiplier tube, Pol:polarizer, CAM:CCD camera, ND:neutral density filter, Cyl Lens:cylindrical lens. 
-												(c) Schematic of experimental design. Blood is collected from mice and spiked with CTCCs before being flowed through a 30x30 &mu;<sup>2</sup> channel. Figure is reproduced from <a href="https://www.nature.com/articles/s41598-022-14003-5"> <i>Vora et al.</i> (2022)</a><sup>1</sup>.
+												(c) Schematic of experimental design. Blood is collected from mice and spiked with CTCCs before being flowed through a 30x30 &mu;m<sup>2</sup> channel. Figure is reproduced from <a href="https://www.nature.com/articles/s41598-022-14003-5"> <i>Vora et al.</i> (2022)</a><sup>1</sup>.
 										</figure>
 										<br>
 										<p style="color:black">
-											Flow Cytometry is a light-based interrogation method to analyze rare small cellular events in liquid samples. Liquid is pulled into a small channel, often wide enough for a single cell to pass through. A laser beam is passed through the tube at a perpendicular angle. As cells cross the laser beam, light scattering in the foward and side directions are collected by
-											specialized detectors called photomultiplier tubes (PMTs). PMTs are specilized low-light detectors that can covert photons into electrical signals that can be registered on a computer. In addition to collecting scattered light signals, specialized markers are used to tag various cellular events in order to distinguish various cell types. These tags are known as fluorescence 
-											stains which are attached to specific cells using targetted proteins. Fluorescence is a chemical process under which light is absorbed by the protein marker and then emitted back out as a red-shifted color. Specilized filters can be set up to specifically detect these colors in order to distinguish different cells based on their "glow"... (Coming Soon)
+											Flow Cytometry is a light-based interrogation method to analyze rare small cellular events in liquid samples. Liquid is pulled into a small channel, often only wide enough for a single cell to pass through. A laser beam is focused through the tube at a orthogonally. As cells cross the laser beam, light scattering in the foward and side directions are collected by
+											specialized detectors called photomultiplier tubes (PMTs). PMTs are specilized low-light detectors that can convert photons into electrical signals that can be registered on a computer. In addition to collecting scattered light signals, specialized markers are used to tag various cellular events in order to distinguish various cell types. These tags are known as fluorescence 
+											stains which are attached to specific cells using targetted proteins. Fluorescence is a chemical process under which light is absorbed by the protein marker and then emitted back out as a red-shifted color. Specilized filters can be set up to specifically detect these colors in order to distinguish different cells based on their "glow". Currently, flow cytometry is limited to
+											<i>in vitro</i> use, this means samples must be collected from a patient or animal and then processed outside of the body. <a href="https://doi.org/10.1364/ol.29.000077"><i> Novak et al.</i> (2004)</a> and <a href="https://doi.org/10.1158/0008-5472.can-04-1058"><i> Georgakoudi et al.</i> (2004)</a> first explored the principles of flow cytometry for <i>in vivo</i> detection of 
+											rare circulating tumor cell clusters (CTCCs)<sup>5,6</sup>. 
+										</p>
+										<p style="color:black">
+											As a tumor grows, individual cells from the tumor will shed from the primary site into the bloodstream<sup>4</sup>. These individual tumor cells are referred to as circulating tumor cells (CTCs). CTCs occur at a rate of 1-75 CTCs per 7.5 mL of blood while CTCCs occur at an even lower rate of less than 4 CTCCs per 7.5 mL of blood in metastatic cancer patients<sup>4</sup>. While rare,
+											CTCCs are 23-50 times more likely to lead to metastatic growth compared to individual CTCs<sup>1</sup>. <i>In vitro</i> detection methods have been widely used to detect CTCCs but can over or under estimate the presence of CTCCs leading to poor correlation with prognosis<sup>1</sup>. <i>In vivo</i> detection could improve correlation with prognosis with continous monitoring of CTCCs
+											in the blood of patients however, current <i>in vivo</i> flow cytometry (IVFC) is limited by the need for staining of cancer cells or limited application to melanoma (skin cancer)<sup>1</sup>. We propose a new method of label-free detection of CTCCs in whole blood using light scattering. Using a focused illumination slit, we can estimate the size of cellular events as they cross a 
+											5 &mu;m illuimation slit. Larger cell clusters will feature broader peaks in the collected time-series data which single cell events will feature narrow peak widths. Using a threshold, we can seperate CTCC events from non-CTCC (NC) events, however, while efficient, blood scatter and immune cell response leads to poor signal-to-noise ratio (SNR) and detection of a larger number of false positive
+											events. For successful use of IVFC, it is not only important to be sensitive to CTCC presence but also to be precise in our detection. As such, we decided to explore machine learning techniques for time-series classification of CTCCs in low-SNR scattering datasets. To learn more about IVFC and our back scatter flow cytometer (BSFC) system, click below.
+
 										</p>
 										<footer>
 											<ul class="actions">
@@ -136,8 +146,11 @@
 										<ol>
 											<li style="color:black">Vora, N. et al. Label-free flow cytometry of rare circulating tumor cell clusters in whole blood. Sci Rep 12, 10721 (2022). <a href="https://doi.org/10.1038/s41598-022-14003-5">https://doi.org/10.1038/s41598-022-14003-5</a></li>
 											<li style="color:black">What Is Cancer?. National Cancer Institute. <a href="https://www.cancer.gov/about-cancer/understanding/what-is-cancer">https://www.cancer.gov/about-cancer/understanding/what-is-cancer</a>. Accessed 12 November 2022.</li>
-											<li style="color:black">Rostami, P. et al. Novel approaches in cancer management with circulating tumor cell clusters. J. Sci. Adv. Mater. Devices 4, 1–18 (2019). <a href="https://doi.org/10.1016/j.jsamd.2019.01.006">https://doi.org/10.1016/j.jsamd.2019.01.006</a></li>
 											<li style="color:black">Howlader, N. et al. SEER Cancer Statistics Review, 1975–2017. Bethesda, MD. <a href="https://seer.cancer.gov/csr/1975_2017/">https://seer.cancer.gov/csr/1975_2017/</a>. Accessed 15 May 2021.</li>
+											<li style="color:black">Rostami, P. et al. Novel approaches in cancer management with circulating tumor cell clusters. J. Sci. Adv. Mater. Devices 4, 1–18 (2019). <a href="https://doi.org/10.1016/j.jsamd.2019.01.006">https://doi.org/10.1016/j.jsamd.2019.01.006</a></li>
+											<li style="color:black">Novak, P. et al. In vivo flow cytometer for real-time detection and quantification of circulating cells. Opt Lett. 2004 Jan 1;29(1):77-9.<a href="https://doi.org/10.1364/ol.29.000077">https://doi.org/10.1364/ol.29.000077</a>.</li>
+											<li style="color:black">Georgakoudi, I. et al. In Vivo Flow Cytometry: A New Method for Enumerating Circulating Cancer Cells. Cancer Res (2004) 64 (15): 5044–5047. <a href="https://doi.org/10.1158/0008-5472.CAN-04-1058">https://doi.org/10.1158/0008-5472.CAN-04-1058</a>.</li>
+
 										</ol>
 					</div>
 				</div>
