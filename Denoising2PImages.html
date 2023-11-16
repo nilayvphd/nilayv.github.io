@@ -98,21 +98,32 @@
 										</section>
 										<hr />
 										<section>
-											<h3 style="color:black">What is Metastasis and why should we care?</h3>
-											<figure>
-												<a href="" class="image fit"><img src="images/img2.png" alt="Cancer statistics from SEER database" /></a>
-												<figcaption style="color:black">
-													. 
-												</figcaption>
-											</figure>
-											<br>
-											<p style="color:black"> Coming Soon
+											<h3 style="color:black">Limitations in Clinical Nonlinear Optical Imaging</h3>
+											<p style="color:black"> 
+												Most clinical TPEF imaging has been conducted on skin with some endoscopic TPEF imaging<sup>13-17</sup>. 
+												A key consideration in clinical TPEF imaging is fast image acquisition of high SNR data. In 
+												preclinical studies, excised biopsies are plated on glass bottom dishes and imaged using a 
+												high NA objective in a lab without major consideration of maximum permissible light dose and 
+												motion artifacts<sup>18</sup>. Comparatively, in vivo imaging is expected to have motion artifacts from patients 
+												and reduced irradiation parameters for safety, requiring high-speed imaging and lower illumination 
+												powers. These two factors can significantly impact the acquired image SNR.
 											</p>
-											<footer>
-												<ul class="actions">
-													<li><a href="" class="button1">Learn More </a></li>
-												</ul>
-											</footer>
+											<p style="color:black"> 
+												Current in vivo MPM imaging systems include the DermaInspect, MPTflex, and MPTcompact systems. 
+												These systems utilize high NA=1.3 objectives to capture label-free TPEF images in patients<sup>19</sup>. 
+												However, to accommodate the high NA objective, the systems are designed to be large and bulky, 
+												limiting their use for clinical acquisition to external skin imaging. A micro-endoscope MPM system 
+												with a NA=0.8 objective is also available but is limited by its collection optics that prevent 
+												internal body use<sup>20</sup>.  As such, hardware improvements are still needed for endoscopic MPM imaging. 
+												Further, software improvements are required to recover image quality from low SNR images to 
+												account for the reduced illumination powers and potential motion artifacts.
+											</p>
+											<p style="color:black"> 
+												In this project, we will focus specifically on software improvements for biologically relevant 
+												image restoration of predictive metabolic metrics as an initial step. We aim to demonstrate the 
+												recovery of image quality and morphofunctional metrics of metabolic activity using DL, which can 
+												aid in the clinical translation of MPM.
+											</p>
 										</section>
 									</section>
 
@@ -127,40 +138,41 @@
 												<img src="images/2PM.png" alt="Summary of experimental system for CTCC detection." />
 											</a>
 											<figcaption style="color:black">
-												(a) Jablonski diagram for single photon and two-photon excited fluorescence (b) Visual representation of fluorescence intensity along the axial plane for SPF and TPEF.
+												Figure 1: (a) Jablonski diagram for single photon and two-photon excited fluorescence (b) Visual representation of fluorescence intensity along the axial plane for SPF and TPEF.
 										</figure>
 										<br>
 										<p style="color:black">
 											Two-Photon excited fluorescence microscopy in a nonlinear optical imaging technique. 
 											Nonlinear optical (NLO) imaging exploits nonlinear light matter interactions that 
-											generally occur only at the focal plane, providing intrinsic depth sectioning25,40,41. 
+											generally occur only at the focal plane, providing intrinsic depth sectioning<sup>4-6</sup>. 
 											Multiphoton microscopy (MPM) is an NLO imaging technique that leverages the simultaneous 
-											absorption of two or more low energy photons that arrive “simultaneously” at the fluorophore42. 
+											absorption of two or more low energy photons that arrive “simultaneously” at the fluorophore<sup>7</sup> . 
 											Owing to the “simultaneous” absorption of low energy photons, the fluorophore achieves a greater 
-											energy state40,42. After a short period of time, the molecule returns to its ground state; 
+											energy state<sup>5,7</sup>. After a short period of time, the molecule returns to its ground state; 
 											however, due to the higher energy state from multiphoton excitation, the emitted fluorescence is of a 
-											lower wavelength compared to the excitation wavelength40,42.
+											lower wavelength compared to the excitation wavelength<sup>5,7</sup>.
 										</p>
 										<p style="color:black">
 											To generate nonlinear optical events, high-powered, ultrafast pulsed lasers 
-											(on the order of femtoseconds) are used162. Multiple nonlinear optical processes 
-											can be generated using these lasers; however, here, we focus specifically on Two-Photon excited fluorescence (TPEF). 
+											(on the order of femtoseconds) are used<sup>8</sup>. Multiple nonlinear optical processes 
+											can be generated using these lasers; however, here, we focus specifically on Two-Photon 
+											excited fluorescence (TPEF). 
 										</p>
 										<p style="color:black">
 											TPEF is a process in which two photons are absorbed by atoms within a time window of 
-											an attosecond (10-18 s), leading to the molecule reaching an excited electronic state24,163. 
+											an attosecond (10-18 s), leading to the molecule reaching an excited electronic state<sup>9,10</sup>. 
 											Quantum mechanically, a single photon is absorbed, bringing the atoms to a virtual 
 											intermediate state before eventually reaching the final excited state by absorbing 
-											a second photon24. Comparatively, in single-photon fluorescence (SPF), a single photon is 
-											absorbed, causing atoms to reach their final excited state (Figure 3.1a)24. After reaching 
+											a second photon<sup>9</sup>. Comparatively, in single-photon fluorescence (SPF), a single photon is 
+											absorbed, causing atoms to reach their final excited state (Figure 1)<sup>9</sup>. After reaching 
 											the final excited state, vibrational relaxation is observed in both SPF and TPEF before 
 											the atoms return to their ground state, emitting a photon (fluorescence).
 										</p>
 										<p style="color:black">
 											Another feature of TPEF is the highly confined three-dimensional excitation volume. 
-											In SPF, excitation occurs along the entire axial plane constantly24.  However, in 
-											TPEF, nonlinear excitation needs high photon flux (1020-1030 photons/cm2s) which 
-											is only satisfied near the focus (Figure 3.1b)24,163. This feature of TPEF enables 
+											In SPF, excitation occurs along the entire axial plane constantly<sup>9</sup>.  However, in 
+											TPEF, nonlinear excitation needs high photon flux (1020-1030 photons/cm<sup>2</sup><span>&#183;</span>s) which 
+											is only satisfied near the focus (Figure 1)<sup>9,10</sup>. This feature of TPEF enables 
 											intrinsic depth sectioning and minimized photobleaching in out-of-focus regions. 
 										</p>
 										<p style="color:black">	
@@ -168,29 +180,78 @@
 											laser light sources compared to visible wavelength lasers used in SPF. The absorption and 
 											scattering of light by tissue are greater in the visible wavelength regime, minimizing the 
 											potential penetration depth of light into bulk tissue. NIR light enables deeper penetration 
-											of light by reducing the number of scattering events and absorption of the low energy photons24. 
+											of light by reducing the number of scattering events and absorption of the low energy photons<sup>9</sup>. 
 											Simultaneously, TPEF mimics behaviors of higher energy SPF allowing for the excitation of 
 											endogenous fluorophores that typically require high-energy photon excitation. Further, since a 
 											NIR illumination source is used to excite a fluorophore with emission in the visible region, 
-											greater separation in excitation and emission bands exist, leading to a higher SNR signal24.
+											greater separation in excitation and emission bands exist, leading to a higher SNR signal<sup>9</sup>.
+										</p>
+									</section>
+									<section id="content">
+										<h3 style="color:black">Sources of Endogenous Contrast for Nonlinear Optical Imaging</h3>
+										<p style="color:black">
+											A variety of endogenous biomolecules can be visualized using TPEF in biological samples. These 
+											fluorophores include Keratin, Retinol, LipDH, NAD(P)H, FAD, Melanin, Lipofuscin, and electron-transferring
+											flavoprotein (ETF)<sup>4</sup>. Free, unbound FAD is a small portion of all FAD autofluorescence; the 
+											majority of FAD signal is found within other flavoproteins like LipDH<sup>4</sup>. In the work described
+											in this project, FAD is used interchangeably to describe autofluorescence detected from
+											all flavin-associated proteins. 
+										</p>
+										<p style="color:black">	
+											The most common sources of intracellular signal in TPEF are NAD(P)H and FAD<sup>4,6</sup>. Extracellularly, 
+											collagen and elastin fibers contribute significant signals in TPEF due to crosslinking structures 
+											within these proteins<sup>11,12</sup>. For all analyses of TPEF images in this project, NAD(P)H and 
+											FAD signals are used, with collagen and elastin signals being masked. NAD(P)H is commonly excited 
+											in TPEF using a 755 nm laser, and emission is collected at 460 ± 25 nm<sup>4,6</sup>. FAD is excited in TPEF 
+											using a 860 nm laser, and emission is collected at 525 ± 25 nm<sup>4,6</sup>. These intrinsic contrast sources 
+											have enabled the rapid translation of TPEF from the benchtop to clinical settings<sup>13-16</sup>.
 										</p>
 										<p style="color:black">
-											3.2 Endogenous Contrast for Nonlinear Optical Imaging
-											A variety of endogenous biomolecules can be visualized using TPEF in biological samples. These fluorophores include Keratin, Retinol, LipDH, NAD(P)H, FAD, Melanin, Lipofuscin, and electron-transferring flavoprotein (ETF)25. Free, unbound FAD is a small portion of all FAD autofluorescence; the majority of FAD signal is found within other flavoproteins like LipDH25. In the work described in this dissertation, FAD is used interchangeably to describe autofluorescence detected from all flavin-associated proteins. 
-											The most common sources of intracellular signal in TPEF are NAD(P)H and FAD25,41. Extracellularly, collagen and elastin fibers contribute significant signals in TPEF due to crosslinking structures within these proteins164,165. For all analyses of TPEF images in this dissertation, NAD(P)H and FAD signals are used, with collagen and elastin signals being masked. NAD(P)H is commonly excited in TPEF using a 755 nm laser, and emission is collected at 460 ± 25 nm25,41. FAD is excited in TPEF using a 860 nm laser, and emission is collected at 525 ± 25 nm25,41. These intrinsic contrast sources have enabled the rapid translation of TPEF from the benchtop to clinical settings54,56–58.
-											3.3 Limitations in Clinical Nonlinear Optical Imaging
-											Most clinical TPEF imaging has been conducted on skin with some endoscopic TPEF imaging54,56–58,166. A key consideration in clinical TPEF imaging is fast image acquisition of high SNR data. In preclinical studies, excised biopsies are plated on glass bottom dishes and imaged using a high NA objective in a lab without major consideration of maximum permissible light dose and motion artifacts43. Comparatively, in vivo imaging is expected to have motion artifacts from patients and reduced irradiation parameters for safety, requiring high-speed imaging and lower illumination powers. These two factors can significantly impact the acquired image SNR.
-											Current in vivo MPM imaging systems include the DermaInspect, MPTflex, and MPTcompact systems. These systems utilize high NA=1.3 objectives to capture label-free TPEF images in patients167. However, to accommodate the high NA objective, the systems are designed to be large and bulky, limiting their use for clinical acquisition to external skin imaging. A micro-endoscope MPM system with a NA=0.8 objective is also available but is limited by its collection optics that prevent internal body use168.  As such, hardware improvements are still needed for endoscopic MPM imaging. Further, software improvements are required to recover image quality from low SNR images to account for the reduced illumination powers and potential motion artifacts. 
-											In this dissertation, we will focus specifically on software improvements for biologically relevant image restoration of predictive metabolic metrics as an initial step. We aim to demonstrate the recovery of image quality and morphofunctional metrics of metabolic activity using DL, which can aid in the clinical translation of MPM.
+											To learn more about how these sources of endogenous contrast can  be used for cancer diagnostics, look
+											at the link below.
+											</p>
+										<footer>
+											<ul class="actions">
+												<li><a href="https://sites.tufts.edu/georgakoudilab/development-of-novel-optical-biomarkers-for-the-non-invasive-detection-of-cervical-precancer/" class="button1">Learn More </a></li>
+											</ul>
+										</footer>
+									</section>
+									<section id="content">
+										<h3 style="color:black">Application of Deep Learning to NLO Images</h3>
+										<p style="color:black"> 
+											Many ML and DL networks have been proposed for image restoration of biomedical images. 
+											However, most proposed networks have been used to restore image quality in fluorescently stained samples. Exogenously 
+											stained sample images feature higher SNR than label-free sample images owing to enhanced contrast from the fluorescence 
+											stain. The same networks are not expected to have comparable performance on label-free images which have lower SNR.
+										</p>
+										<p style="color:black">	
+											DL-enabled label-free image restoration was first explored by <a href="https://doi.org/10.1038/s41598-020-75172-9">Fast et al. (2020)</a> to enhance image contrast and 
+											extend the scanning area of a custom in vivo MPM exoscope imaging system<sup>21</sup>. <a href="https://doi.org/10.1038/s41598-020-75172-9">Fast et al. (2020)</a> demonstrated 
+											using the content aware image restoration and enhancement (CARE) network sub-micron lateral resolution with a 
+											large field of view in a fraction of the time compared to current commercial MPM imaging systems (DermaInspect)<sup>21</sup>. 
+											However, no metrics on image quality or model performance were provided. More recently, <a href="https://doi.org/10.1038/s41377-022-00768-x">Shen et al. (2022)</a> presented 
+											alternative methods for DL-enabled label-free image restoration of TPEF images<sup>22</sup>. <a href="https://doi.org/10.1038/s41377-022-00768-x">Shen et al. (2022)</a> demonstrated using 
+											a modified generative adversarial network (GAN) ~4.5 dB improvement in peak SNR (PSNR) and 79% improvement in structural 
+											similarity index measure (SSIM), two metrics used to assess the quality of a noisy image compared to a clean/ground 
+											truth image<sup>22</sup>. However, tissue images were collected from thin optical sections (OS), featuring consistent SNR between 
+											each image compared to bulk tissue, where SNR is expected to decay as a function of depth. 
+										</p>
+										<p style="color:black">	
+											<a href="https://doi.org/10.1038/s41377-022-00768-x">Shen et al. (2022)</a> and <a href="https://doi.org/10.1038/s41598-020-75172-9">Fast et al. (2020)</a> 
+											are the only studies to examine DL-enabled restoration of label-free TPEF 
+											images<sup>21,22</sup>. Despite the observed improvement in image quality after restoration, there is a lack of understanding 
+											regarding the impact denoising has on biomedical metrics extracted from these images. Morphofunctional metrics of 
+											metabolic activity show immense potential for sensitive (93.3%) and specific (83.3%) detection of cervical precancer<sup>18</sup>. 
+											It is therefore imperative for DL algorithms to demonstrate recovery of not only image quality but also biomedical metrics. 
+											In this project, we cover some of our early efforts to understand the impact of DL-based image restoration on 
+											metabolic metric recovery compared to standard image quality metrics and explore how these models could be used for 
+											clinical diagnosis of cervical pre-cancer. To read our published work click on the link below.
 										</p>
 										<footer>
 											<ul class="actions">
-												<li><a href="BSFC.html" class="button1">Learn More </a></li>
+												<li><a href="https://doi.org/10.1101/2023.06.07.544033" class="button1">Link to Publication </a></li>
 											</ul>
 										</footer>
-										<h3 style="color:black">.</h3>
-										<p style="color:black"> Coming Soon!
-										</p>
 									</section>
 
 							</div>
@@ -200,12 +261,29 @@
 											<li style="color:black">Gates, A. et al. Screening for the prevention and early detection of cervical cancer: protocol for systematic reviews to inform Canadian recommendations. <i>Syst. Rev.</i> 10, (2021). <a href="https://doi.org/10.1186/s13643-020-01538-9">https://doi.org/10.1186/s13643-020-01538-9/</a></li>
 											<li style="color:black">Cooper, G. M. <i>The cell : a molecular approach.</i> (ASM Press, 2007). <a href="https://www.ncbi.nlm.nih.gov/books/NBK9839/">https://www.ncbi.nlm.nih.gov/books/NBK9839/</a></li>
 											<li style="color:black">World Health Organization. Screening and treatment of cervical pre-cancer. in <i> Cervical Cancer Control: A Guide to Essential Practice 129–161 (2014).</i> <a href="https://www.ncbi.nlm.nih.gov/books/NBK269601/">https://www.ncbi.nlm.nih.gov/books/NBK269601/</a></li>
-											<li style="color:black">Howlader, N. et al. SEER Cancer Statistics Review, 1975–2017. Bethesda, MD. <a href="https://seer.cancer.gov/csr/1975_2017/">https://seer.cancer.gov/csr/1975_2017/</a>. Accessed 15 May 2021.</li>
+											<li style="color:black">Georgakoudi, I. & Quinn, K. P. Label-Free Optical Metabolic Imaging in Cells and Tissues. <i> Annu. Rev. Biomed. Eng.</i>  25, 413–443 (2023).<a href="https://doi.org/10.1146/annurev-bioeng-071516-044730">https://doi.org/10.1146/annurev-bioeng-071516-044730</a></li>
+											<li style="color:black">Thomas, G., Van Voskuilen, J., Gerritsen, H. C. & Sterenborg, H. J. C. M. Advances and challenges in label-free nonlinear optical imaging using two-photon excitation fluorescence and second harmonic generation for cancer research. <i>J. Photochem. Photobiol. B Biol.</i> 141, 128–138 (2014).<a href="https://doi.org/10.1016/j.jphotobiol.2014.08.025">https://doi.org/10.1016/j.jphotobiol.2014.08.025</a></li>
+											<li style="color:black">Georgakoudi, I. & Quinn, K. P. Optical Imaging Using Endogenous Contrast to Assess Metabolic State. <i>Annu. Rev. Biomed. Eng.</i> 14, 351–367 (2012).<a href="https://doi.org/10.1146/annurev-bioeng-071811-150108">https://doi.org/10.1146/annurev-bioeng-071811-150108</a></li>
+											<li style="color:black">Cho, H. J., Chun, H. J., Kim, E. S. & Cho, B. R. Multiphoton microscopy: An introduction to gastroenterologists. <i>World J. Gastroenterol.</i> 17, 4456–4460 (2011).<a href="https://doi.org/10.3748%2Fwjg.v17.i40.4456">https://doi.org/10.3748%2Fwjg.v17.i40.4456</a></li>
+											<li style="color:black">Boyd, R. W. The Nonlinear Optical Susceptibility. in <i>Nonlinear Optics</i> 1–67 (Elsevier, 2008).<a href="https://doi.org/10.1016/B978-0-12-369470-6.00001-0">https://doi.org/10.1016/B978-0-12-369470-6.00001-0</a></li>
+											<li style="color:black">So, P. T. C., Dong, C. Y., Masters, B. R. & Berland, K. M. Two-Photon Excitation Fluorescence Microscopy. <i>Annu. Rev. Biomed. Eng.</i> 2, 399–429 (2000).<a href="https://doi.org/10.1146/annurev.bioeng.2.1.399">https://doi.org/10.1146/annurev.bioeng.2.1.399</a></li>
+											<li style="color:black">Oheim, M., Michael, D. J., Geisbauer, M., Madsen, D. & Chow, R. H. Principles of two-photon excitation fluorescence microscopy and other nonlinear imaging approaches. <i>Adv. Drug Deliv. Rev.</i> 58, 788–808 (2006).<a href="https://doi.org/10.1016/j.addr.2006.07.005">https://doi.org/10.1016/j.addr.2006.07.005</a></li>
+											<li style="color:black">Quinn, K. P. et al. Optical metrics of the extracellular matrix predict compositional and mechanical changes after myocardial infarction. <i> Sci. Rep.</i> 6, 1–12 (2016).<a href="https://doi.org/10.1038/srep35823">https://doi.org/10.1038/srep35823</a></li>
+											<li style="color:black">Chai, D. et al. Quantitative assessment of UVA-riboflavin corneal cross-linking using nonlinear optical microscopy. <i>Investig. Ophthalmol. Vis. Sci.</i> 52, 4231–4238 (2011).<a href="https://doi.org/10.1167/iovs.10-7105">https://doi.org/10.1167/iovs.10-7105</a></li>
+											<li style="color:black">Balu, M. et al. In Vivo Multiphoton Microscopy of Basal Cell Carcinoma. <i>JAMA Dermatology</i> 151, 1068 (2015).<a href="https://doi.org/10.1001/jamadermatol.2015.0453">https://doi.org/10.1001/jamadermatol.2015.0453</a></li>
+											<li style="color:black">You, S. et al. Label-Free Deep Profiling of the Tumor Microenvironment. <i>Cancer Res.</i> 81, 2534–2544 (2021).<a href="https://doi.org/10.1158/0008-5472.can-20-3124">https://doi.org/10.1158/0008-5472.can-20-3124</a></li>
+											<li style="color:black">Pshenay-Severin, E. et al. Multimodal nonlinear endomicroscopic imaging probe using a double-core double-clad fiber and focus-combining micro-optical concept. <i>Light Sci. Appl.</i> 10, 207 (2021).<a href="https://doi.org/10.1038/s41377-021-00648-w">https://doi.org/10.1038/s41377-021-00648-w</a></li>
+											<li style="color:black">Shiu, J. et al. Multimodal analyses of vitiligo skin identifies tissue characteristics of stable disease. <i>JCI Insight</i> 7, (2022).<a href="https://doi.org/10.1172/jci.insight.154585">https://doi.org/10.1172/jci.insight.154585</a></li>
+											<li style="color:black">Liu, J. Two-photon microscopy in pre-clinical and clinical cancer research. <i>Front. Optoelectron.</i> 8, 141–151 (2015).<a href="https://doi.org/10.1007/s12200-014-0415-5">https://doi.org/10.1007/s12200-014-0415-5</a></li>
+											<li style="color:black">Pouli, D. et al. Label-free, High-Resolution Optical Metabolic Imaging of Human Cervical Precancers Reveals Potential for Intraepithelial Neoplasia Diagnosis. <i>Cell Reports Med.</i> 1, 100017 (2020).<a href="https://doi.org/10.1016/j.xcrm.2020.100017">https://doi.org/10.1016/j.xcrm.2020.100017</a></li>
+											<li style="color:black">König, K. et al. Translation of two-photon microscopy to the clinic: multimodal multiphoton CARS tomography of in vivo human skin. <i>J. Biomed. Opt.</i> 25, 1 (2020).<a href="https://doi.org/10.1117/1.jbo.25.1.014515">https://doi.org/10.1117/1.jbo.25.1.014515</a></li>
+											<li style="color:black">König, K. et al. Multiphoton tissue imaging using high-NA microendoscopes and flexible scan heads for clinical studies and small animal research. <i>J. Biophotonics</i> 1, 506–13 (2008).<a href="https://doi.org/10.1002/jbio.200810049">https://doi.org/10.1002/jbio.200810049</a></li>
+											<li style="color:black">Fast, A. et al. Fast, large area multiphoton exoscope (FLAME) for macroscopic imaging with microscopic resolution of human skin. <i>Sci. Rep.</i> 10, 1–14 (2020).<a href="https://doi.org/10.1038/s41598-020-75172-9">https://doi.org/10.1038/s41598-020-75172-9</a></li>
+											<li style="color:black">Shen, B. et al. Deep learning autofluorescence-harmonic microscopy. <i>Light Sci. Appl.</i> 11, 76 (2022).<a href="https://doi.org/10.1038/s41377-022-00768-x">https://doi.org/10.1038/s41377-022-00768-x</a></li>
 										</ol>
 									
 					</div>
 				</div>
-                    
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
